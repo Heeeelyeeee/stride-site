@@ -12,49 +12,152 @@
 <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a></nav>
 </header>
 <h1>Privacy policy</h1>
-<p class="updated">Last updated: 2026-10-08</p>
-<p>Stride is a training and nutrition log with an AI coach, made by heeeelyeeee, an independent developer. This explains what happens to your data.</p>
+<p class="updated">Last updated: 2026-10-10</p>
 
-<h2>Where your data lives</h2>
-<p>Everything you log in Stride (chat messages, meals, workouts, sleep, heart rate, body measurements, goals, and data read from connected apps) is stored <strong>on your phone</strong>, in a local database. Sign-in tokens for connected services are kept in your phone's secure storage.</p>
-<p><strong>Your Stride account</strong> holds only your email address, a hash of your password, your subscription status, and a count of today's coach requests (deleted after a day). Each sign-in session also records your IP address and a technical client label, and the account keeps the time of your last sign-in; all of it is deleted with your account. Stride's server never stores your logs, health data, chats or photos.</p>
+<h2>Who we are</h2>
+<p>Stride is a training and nutrition log with an AI coach. It is made by heeeelyeeee, an independent developer in Norway, who decides why and how the data described here is used and so is the data controller under the GDPR. Contact: <a href="mailto:ugleskippy123@gmail.com">ugleskippy123@gmail.com</a>.</p>
+<p>Stride is for adults aged 18 and over. It does not knowingly collect data from anyone under 18. If you think someone under 18 has a Stride account, email us and we will delete it.</p>
+
+<h2>What stays on your phone</h2>
+<p>Everything you log in Stride is stored <strong>on your phone</strong>, in a local database. That covers chat messages and the photos, voice memos, videos and files attached to them, meals, workouts, sleep, heart rate and other readings, body measurements, symptoms, goals, your profile, the GPS routes of runs you record, and what Stride reads from Health Connect, Hevy and import files.</p>
+<p>Your Stride sign-in and your Hevy key are kept in your phone's secure storage.</p>
 
 <h2>What leaves your phone</h2>
-<p><strong>Google Gemini API (the AI coach).</strong> When you send the coach a message, photo, file (a PDF or text file), voice memo or form-check video, that content is sent to Google's Gemini API together with a summary of your logged data: profile and targets, recent workouts, meals, sleep, heart rate and HRV, weight, symptoms you've logged, goals, and facts you've told the coach. It passes through Stride's server, which adds Stride's API key and does not keep or log it. Google processes it under the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a> on Stride's paid account, so Google does not use it to improve its products. Form-check videos are uploaded to Google temporarily and deleted automatically after about 48 hours. Photos and files you attach to a message are sent with that message only; a copy stays on your phone until you delete the message. If you've set a backup folder, a copy is saved there too, and Stride doesn't remove it from that folder; delete it there yourself.</p>
-<p><strong>Run routes and second-by-second readings stay on your phone.</strong> A run's GPS route and its pace and heart rate over time are used to draw charts and are never sent to the AI coach.</p>
-<p><strong>Location, only while you record a run.</strong> If you record a run in Stride, it uses your phone's location from Start to Finish to measure distance, pace and route. The route is stored on your phone with the run. Stride does not use your location at any other time and never in the background when you are not recording.</p>
-<p><strong>Open Food Facts.</strong> Scanning a barcode sends just the barcode number to look up the product.</p>
-<p><strong>Stadia Maps.</strong> To draw the map behind a route, Stride downloads map images for the area the route covers. Stadia Maps sees which map squares are requested and your IP address, but never receives the route itself or anything else about you.</p>
-<p><strong>Purchases.</strong> Subscriptions are handled by Google Play. Stride uses RevenueCat to check whether your subscription is active; RevenueCat receives your Stride account ID and your purchase details from Google Play, not your health data. Stride never sees your payment details.</p>
-<p><strong>Services you connect.</strong> Health Connect, Google Health, Hevy and Google Calendar are off until you connect them. Stride reads your data from them on your phone. Google Calendar is the only one Stride writes to, when you or the coach add, move or delete an event.</p>
-<p><strong>Crash reports (Sentry).</strong> When Stride crashes or hits an unexpected error, it sends a report to Sentry, the crash-reporting service the developer uses: the error message and where in the code it happened, the app version and update, the phone model and Android version, and a random ID for this install that is not linked to your account. It never includes your logs, health or food data, chats, photos, email or name, and error messages are shortened and stripped of keys and sign-ins before they are sent. Turn it off in Settings → About &amp; privacy → Send crash reports.</p>
-<p>Stride has no analytics or ads, and never sells your data or shares it with anyone else.</p>
+<p>Stride sends data off your phone only in the ways described here. Each goes to the service named, for the purpose given. Some of these services process data in other countries, under their own terms.</p>
+<p><strong>The AI coach chat (Anthropic).</strong> The coach you chat with runs on Claude, an AI model made by Anthropic. When you send the coach a message, Stride sends the request to Anthropic's Claude API through Stride's server, which runs on <a href="https://supabase.com/privacy">Supabase</a>. The server checks your account, adds Stride's API key and passes the request on. It does not store or log what it passes on. What is sent to Anthropic:</p>
+<ul>
+<li>Your message, and the photos, PDFs and text files you attach to it. For a voice memo, Anthropic gets the words you said, written out by Google (see below), not the recording. Audio and video are never sent to Anthropic.</li>
+<li>The recent messages of that chat. Earlier photos, files and audio in it are replaced by a short text note.</li>
+<li>A summary of your data, rebuilt for each message: your name, age, sex and height; diet preference, targets, goals and plans; recent workouts, runs and meals; sleep, heart rate, HRV and other recovery readings, including values read from Health Connect; weight and body composition; symptoms and stats you logged; sessions the coach planned for you; facts you told the coach; the coach's notes on your recent chats; your dashboard layout; which services you connected; your time zone and the time.</li>
+<li>If Google Calendar is connected: the titles, dates and times of your events in the next 7 days. Not their descriptions.</li>
+<li>Older history, when the coach asks for it while answering: workouts, activities, meals, recovery and body readings up to a year back, and calendar events up to 60 days ahead.</li>
+</ul>
+<p>Anthropic handles what it receives as Stride's processor, under its <a href="https://www.anthropic.com/legal/commercial-terms">Commercial Terms of Service</a> and <a href="https://www.anthropic.com/legal/data-processing-addendum">Data Processing Addendum</a>. Anthropic's <a href="https://platform.claude.com/docs/en/manage-claude/api-and-data-retention">data retention documentation</a> says it may keep a request that its automated safety systems flag for up to 2 years, and may keep data where the law requires it.</p>
+<p><strong>AI features that use Google Gemini.</strong> These go to Google's Gemini API, through Stride's server in the same way:</p>
+<ul>
+<li>A voice memo you send the coach. Google writes out what you said, and only that text goes on to Anthropic with your message.</li>
+<li>A photo you log with Meal photo, with any note you add, and a screenshot you import with App screenshot, so Google can read the food or the workout in it. A photo you attach to a chat message goes to Anthropic instead, as described above.</li>
+<li>A form-check video. Google reviews it, and its feedback appears in the chat as the coach's reply.</li>
+<li>In the background, the recent messages of a chat and the notes written on it so far, so Google can update the short notes on your recent chats that the coach reads. Those messages can include anything you or the coach wrote in that chat.</li>
+</ul>
+<p>Google handles what it receives under its <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>. Form-check videos are uploaded to Google's file storage, which deletes them automatically after about 48 hours.</p>
+<p>Not sent to Anthropic or Google: your email address, your password, or the GPS points of a route. What you type or attach yourself is sent as it is, so leave out anything you do not want Anthropic or Google to receive. Stride asks you to agree to this before you start.</p>
+<p><strong>Location, only while you record a run.</strong> If you record a run (Training → Record a run with GPS), Stride uses your phone's location from Start to Finish. It keeps recording with the screen off or another app in front, using an Android foreground service, and shows a "Recording your run" notification while it does (on Android 13 and later, only if you allow Stride notifications). Recording stops when you pause, finish or cancel. Closing Stride does not stop it, so finish or cancel the run in the app. On a phone where this does not work, Stride records only while the record screen is open and the screen is kept on.</p>
+<p>Stride does not ask for background location ("Allow all the time"), and does not use your location at any other time. The route is stored on your phone with the run and is included in your backups. It is not sent to the AI coach, though the run's distance, time and pace are, like any run's.</p>
+<p><strong>Maps (Stadia Maps).</strong> The map under a route comes from <a href="https://stadiamaps.com/privacy/privacy-policy/">Stadia Maps</a>. Stride requests it when you open a run that has a route, whether you recorded it with Stride or it was read from Health Connect, and live on the record screen while you record.</p>
+<p>Stadia sees which map squares are requested, when, and your IP address, so it can tell where you are or were. At the start of a recording the squares are roughly 100 to 300 metres across, depending on where you are, and they get larger as the route grows. Stadia does not receive the route itself, the run's times or anything else about you. Map images are cached on your phone.</p>
+<p><strong>Purchases (Google Play and RevenueCat).</strong> Stride Pro is bought with Google Play Billing, through <a href="https://www.revenuecat.com/privacy">RevenueCat</a>. Google Play handles your payment details. Stride never sees them. RevenueCat receives your Stride account ID, as your ID in its system, and your purchase and subscription status from Google Play. It also sees technical details of the connection, such as your IP address. RevenueCat gets no health data.</p>
+<p>RevenueCat tells Stride's server when your subscription changes, and after a purchase or restore the server asks RevenueCat whether it is active. The server keeps only whether you have Pro and when it ends.</p>
+<p><strong>Crash reports (Sentry).</strong> When Stride crashes or hits an unexpected error, it sends a report to <a href="https://sentry.io/privacy/">Sentry</a>, a crash-reporting service. This is on from the first launch. Turn it off in Settings → About &amp; privacy → Send crash reports. While it is on, sharing a debug report also sends Sentry a short marker message.</p>
+<p>A report holds the error message and where in the code it happened, the app version and update, your phone model and Android version, the last few screen names and app events, and a random ID for this install that is not linked to your account. Sentry also sees your IP address.</p>
+<p>Stride does not put your logs, health or food data, chats, photos, email or name in a report. Error messages are cut to 300 characters and have keys and sign-in tokens removed, but a message can quote a value the app was working with. Crashes in Android's native layer are reported by Sentry's own code and may carry more technical detail about the phone.</p>
+<p><strong>App updates (Expo).</strong> Stride gets its updates through <a href="https://expo.dev/privacy">Expo</a>'s update service. At each launch the app asks Expo whether a new version is available. The request carries the app version, the platform (Android), the update channel, the ID of the update now running, a random ID Expo makes for this install, and your IP address. It does not include your account, logs or health data.</p>
+<p><strong>Barcodes (Open Food Facts and Google ML Kit).</strong> When you scan a barcode, Stride reads it on your phone with Google's ML Kit, using a model that ships inside the app. The camera image stays on your phone. Stride sends just the barcode number to <a href="https://world.openfoodfacts.org/privacy">Open Food Facts</a> to look up the product, and Open Food Facts also sees your IP address.</p>
+<p>Google's <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit documentation</a> says ML Kit sends Google technical diagnostics: phone model, Android and app version, an ID for this install, timings and error codes. It does not list the image or the barcode.</p>
+<p><strong>Hevy, Strong and Cronometer.</strong> Hevy is off until you paste your Hevy key. Stride keeps it in secure storage and uses it to read your workouts and body measurements from Hevy, read only. Hevy sees the key and your IP address. Strong and Cronometer work from files: you export a file from them and open it in Stride, which reads it on your phone and sends nothing to either service.</p>
+<p><strong>Google Calendar (optional).</strong> If you connect it, Google asks you to let Stride view and edit events on your calendars. Stride only uses your primary calendar. It reads event titles, descriptions, times and all-day flags and shows them in the Calendar tab. It adds, moves or deletes events only when you or the coach ask.</p>
+<p>While Calendar is connected, event titles, dates and times for the next 7 days go to Anthropic for the AI coach chat, as described above, so the coach can plan around your week. Descriptions are not sent. Stride's server does not store calendar data. Stride does not use it for ads and does not sell it.</p>
+<p>Stride's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<p>To stop, tap Disconnect in the Calendar tab. To remove Stride's permission completely, go to <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+<p><strong>What you share yourself.</strong> In Settings → About &amp; privacy, Share debug report makes a file with the app version, phone details, database and sync status and recent errors, and hands it to the app you pick. It holds your workouts, meals, health data and chats only if you tap Include my data. On a coach message, Share or copy and Report this reply open the app or draft you choose. The file, the text and the draft go only where you send them.</p>
 
 <h2>Health Connect</h2>
-<p>With your permission, Stride reads exercise sessions and routes, distance, speed, steps and cadence, elevation and floors, calories burned, heart rate, resting heart rate, heart rate variability, VO2 max, oxygen saturation, respiratory rate, sleep, weight and body fat from Health Connect. It uses this data only to show your training, recovery and body trends and to give the AI coach context for its advice, as described above. Stride does not write to Health Connect. Data read from Health Connect is not used for advertising, not sold, and not shared with anyone except as described above for the AI coach. Stride's use of information received from Health Connect adheres to the <a href="https://support.google.com/googleplay/android-developer/answer/12991134">Health Connect Permissions policy</a>, including the Limited Use requirements.</p>
-
-<h2>Not medical advice</h2>
-<p>Stride and its coach give general fitness and nutrition information. They are not a medical device and do not diagnose or treat anything. For pain, injury, illness, pregnancy, or concerns about eating, talk to a doctor or other qualified professional.</p>
-
-<h2>Age</h2>
-<p>Stride is for adults aged 18 and over.</p>
-
-<h2>Your choices</h2>
+<p>With your permission, Stride reads these from Health Connect: exercise sessions and their routes (Health Connect can ask before sharing each route), distance, speed, heart rate, resting heart rate, heart rate variability, VO2 max, steps, floors climbed, elevation gained, calories burned, sleep, weight and body fat.</p>
+<p>Stride only reads. It never writes to Health Connect. It reads when you open the app, not while the app is closed.</p>
+<p>Stride uses this data to show your training, recovery and body trends, and to give the AI coach context when you ask it something. It is stored on your phone. It goes to other services in these ways. A summary goes to Anthropic for the AI coach chat, as described above, because you ask the coach. What you or the coach write about it in a chat can reach Google with that chat's recent messages, for the chat notes. And map squares for a route are requested from Stadia Maps, without the route itself. It is also in the backups and copies described below. It is not used for advertising and is not sold.</p>
+<p>Stride's use and transfer of information received from Health Connect adheres to the <a href="https://support.google.com/googleplay/android-developer/answer/9888170">Health Connect by Android Permissions policy</a>, including the Limited Use requirements:</p>
 <ul>
-<li><strong>Delete your account:</strong> in the app, Settings → Account → Delete account. Without the app, see <a href="delete-account.html">Delete your account</a>. This removes your email, password, subscription status and usage count from Stride's server.</li>
-<li><strong>Delete everything on your phone:</strong> Settings → Backup &amp; data → Delete all my data, or uninstall the app.</li>
-<li><strong>Export:</strong> Settings → Backup &amp; data → Export saves your data to a file you control.</li>
-<li><strong>Disconnect</strong> any service from Settings → Integrations, and revoke Stride's access in that service's own settings.</li>
+<li>Data use should be limited to providing or improving the appropriate use case or features visible in the application's user interface.</li>
+<li>User data may only be transferred to third parties with explicit user consent: for security purposes (for example, to investigate abuse), to comply with applicable laws or regulations, or as part of mergers/acquisitions.</li>
+<li>Human access to user data is restricted unless explicit user consent is obtained, for security purposes, to comply with laws, or when aggregated for internal operations as per legal requirements.</li>
+</ul>
+<p>All other transfers, uses, or sale of Health Connect data is prohibited, including:</p>
+<ul>
+<li>Transferring or selling user data to third parties like advertising platforms, data brokers, or any information resellers.</li>
+<li>Transferring, selling, or using user data for serving ads, including personalized or interest-based advertising.</li>
+<li>Transferring, selling, or using user data to determine credit-worthiness or for lending purposes.</li>
+<li>Transferring, selling, or using user data with any product or service that may qualify as a medical device, unless the medical device app complies with all applicable regulations, including obtaining necessary clearances or approvals from relevant regulatory bodies (for example, U.S. FDA) for its intended use of Health Connect data, and the user has provided explicit consent for such use.</li>
+<li>Transferring, selling, or using user data for any purpose or in any manner involving Protected Health Information (as defined by HIPAA) unless user-initiated and in compliance with HIPAA regulations.</li>
+</ul>
+<p>To stop Stride reading Health Connect, open Android Settings → Health Connect → App permissions → Stride and turn off the types you want. What Stride has already copied stays on your phone until you delete it. Settings → Backup &amp; data → Delete all my data removes it from your phone. That does not remove anything inside Health Connect itself, or the copies described under Backups and copies.</p>
+
+<h2>Your Stride account</h2>
+<p>Your account is hosted by Supabase. It holds your email address; a hash of your password, not the password; the date you signed up, which sets when your free trial ends; whether you have Stride Pro and when it ends; and a count of today's coach requests (older counts are deleted automatically). Stride keeps these until you delete your account.</p>
+<p>Each sign-in session also records your IP address and a technical client label, and the account keeps the time of your last sign-in. The session records are deleted with your account. Supabase also keeps its own technical logs, which it deletes on its own schedule.</p>
+<p>Stride's server never stores your logs, health data, chats or photos.</p>
+
+<h2>Backups and copies</h2>
+<p>Your Stride data is also copied in these ways:</p>
+<ul>
+<li><strong>Android backup to your Google account.</strong> If Google backup is on, Android copies a compressed snapshot of your Stride data to your Google account about once a day. It holds what an export holds: chats, health and fitness data, GPS routes, meals, symptoms and your profile. It leaves out photos, voice memos, videos and your sign-ins. Stride asks Android to back up only when it can be encrypted with your screen lock. Delete all my data and uninstalling do not remove Google's copy, and a reinstall can offer to restore it. To stop it or delete it, use your phone's Google backup settings.</li>
+<li><strong>Phone-to-phone transfer.</strong> When you set up a new phone with Android's transfer, your Stride data, including photos, voice memos and videos, can move with it.</li>
+<li><strong>Backup folder (optional).</strong> If you choose a folder in Settings → Backup &amp; data, Stride saves a backup file there each day you open it, with your photos, voice memos and videos, and keeps the last 7 backups. These files are not encrypted and contain your health data. If the folder syncs to a cloud service, that service holds them too. Stride does not delete them when you delete a message or your data. Delete them in the folder yourself.</li>
+<li><strong>Export.</strong> Settings → Backup &amp; data → Export saves a file you keep or send where you choose. It is not encrypted and contains your health data. Stride does not track it or delete it.</li>
 </ul>
 
+<h2>Keeping and deleting data</h2>
+<ul>
+<li><strong>Delete a message or a chat:</strong> removes it from your phone, together with the photos, voice memos, videos and files attached to it. A file that another message or a logged meal still shows stays until that is deleted too. Copies in backups and exports stay until you delete them, and so does anything already sent to Anthropic or Google.</li>
+<li><strong>Delete all my data</strong> (Settings → Backup &amp; data → Delete all my data): removes from your phone every log, chat, profile detail and setting, your GPS routes, the photos, voice memos and videos Stride stored, the backup snapshot in the app's storage, and your Hevy key. It signs Stride out of Google Calendar. It does not delete your Stride account or sign you out, files in a backup folder, exports you shared, Android's Google backup, the random crash-report ID and local error logs, anything already sent to Anthropic, Google or other services, or anything inside Health Connect.</li>
+<li><strong>Delete your account</strong> (Settings → Account → Delete account): removes your email, password hash, plan, usage counts and sign-in sessions from Stride's server at once. It does not touch the data on your phone and does not cancel a Google Play subscription, which you cancel in Google Play. Once the account is deleted, Stride asks you to sign in before it opens, so delete your data on the phone first if you want to. Without the app, use the <a href="https://heeeelyeeee.github.io/stride-site/delete-account.html">delete account page</a> or email us.</li>
+<li><strong>Uninstall Stride:</strong> removes its data from your phone. Android's Google backup copy stays.</li>
+<li><strong>Disconnect a service:</strong> Hevy in Settings → Integrations, Google Calendar in the Calendar tab, Health Connect in Android Settings → Health Connect → App permissions. Data already synced stays on your phone. To remove Stride's access completely, also do it in that service's own settings.</li>
+</ul>
+<p>Some things stay after you delete your account:</p>
+<ul>
+<li>Google Play keeps its own purchase records, under Google's policies.</li>
+<li>RevenueCat keeps the customer record for your account ID, with purchase history, under its own policy. To have it deleted, email us and the developer will have RevenueCat delete it.</li>
+<li>Sentry keeps crash reports under its own retention. They carry a random install ID, not your account.</li>
+<li>Supabase, Expo, Stadia Maps and Open Food Facts may keep technical logs of requests, such as your IP address, on their own schedules.</li>
+<li>What Stride sent to Anthropic and Google for the AI coach is governed by their terms, as described above. Stride cannot delete it.</li>
+</ul>
+
+<h2>No ads, no sale</h2>
+<p>Stride has no ads and no behavioural analytics, and it does not sell your data. Your data goes only to the service providers named in this policy, and only for the purposes described.</p>
+
+<h2>Why we use your data</h2>
+<p>If you are in the EU, the EEA (which includes Norway) or the UK, the GDPR requires a legal basis for each use of your data. Stride's are:</p>
+<ul>
+<li><strong>Your account, free trial and Stride Pro</strong> (your email address, password hash, sign-up date, plan, sign-in sessions and daily coach count, and your purchase status from Google Play and RevenueCat): performance of the contract with you, GDPR Article 6(1)(b). Stride cannot run an account or a subscription without them.</li>
+<li><strong>The AI coach and the other Google features</strong> (everything sent to Anthropic and Google as described above, including health and food data, Health Connect values, photos, voice memos, videos and calendar titles): your explicit consent, Article 6(1)(a), and for health data Article 9(2)(a). You give it on the agreement screen at first launch, and again whenever Stride asks you to agree again.</li>
+<li><strong>Reading Health Connect, and connecting Hevy or Google Calendar:</strong> your consent, given when you allow each Health Connect permission or connect the service.</li>
+<li><strong>Maps, barcode look-ups and the Hevy sync</strong> (map squares to Stadia Maps, barcode numbers to Open Food Facts, your key to Hevy): needed to give you the feature you asked for, Article 6(1)(b).</li>
+<li><strong>Crash reports (Sentry), app updates (Expo) and the server's security records of sign-ins:</strong> Stride's legitimate interest in keeping the app working and secure, Article 6(1)(f). Crash reports start when the app opens, before the agreement screen, so consent is not their basis. You can object to them by turning them off in Settings → About &amp; privacy → Send crash reports, and to the others by email.</li>
+</ul>
+<p>Giving data is voluntary, but some is needed to use Stride. An email address and password are needed for an account, and Stride asks you to sign in. You have to agree on the agreement screen before you use the app, and the coach cannot answer without receiving the data described above. Health Connect, Google Calendar and Hevy are optional. Nothing goes to Anthropic or Google unless you use the coach chat, a voice memo, Meal photo, App screenshot or a form-check video.</p>
+<p>You can withdraw your consent at any time, and it does not affect what happened before. Stride has no switch that turns the AI features off while keeping the rest of the app. To withdraw, stop using the coach and those features, delete your account and your data, or uninstall Stride. To stop Stride reading Health Connect, Hevy or Google Calendar, see Keeping and deleting data above.</p>
+
+<h2>Where your data is processed</h2>
+<p>heeeelyeeee is in Norway. Some of the services named in this policy are outside the EEA. Each of those relies on the transfer safeguard its own terms name, as read on 2026-10-10. These can change, so check the linked terms if it matters to you.</p>
+<ul>
+<li><strong>Stride's server (Supabase).</strong> The account database is in London, in the UK. The EU has an adequacy decision for the UK, set to run until 27 December 2031 (<a href="https://eur-lex.europa.eu/eli/dec_impl/2025/2574/oj/eng">Commission Implementing Decision (EU) 2025/2574</a>). The functions that pass coach requests on run in the Supabase region closest to your phone. Supabase's <a href="https://supabase.com/legal/dpa">Data Processing Addendum</a> uses the EU Standard Contractual Clauses (SCCs) for transfers to its group companies in Singapore and the United States.</li>
+<li><strong>Anthropic.</strong> Anthropic can process requests in the United States and other countries. Its <a href="https://www.anthropic.com/legal/data-processing-addendum">Data Processing Addendum</a> uses the SCCs for transfers out of the EEA, with a UK addendum.</li>
+<li><strong>Google (Gemini, Google Play, Android backup, Google Calendar and ML Kit).</strong> Google processes data in countries where it or its sub-processors have facilities. Its <a href="https://business.safety.google/processorterms/">data processing terms</a> say it has certified under the EU-US Data Privacy Framework and provide for the SCCs where that does not apply. Google Play's <a href="https://play.google/developer-distribution-agreement.html">developer terms</a> rely on the SCCs.</li>
+<li><strong>RevenueCat.</strong> It stores data in the United States. Its <a href="https://www.revenuecat.com/dpa/">Data Processing Addendum</a> uses the SCCs.</li>
+<li><strong>Sentry.</strong> Crash reports are stored in Germany, in Sentry's EU data region. Sentry is a US company. It says it participates in the EU-US Data Privacy Framework, and its <a href="https://sentry.io/legal/dpa/">Data Processing Addendum</a> provides for the SCCs as a fallback.</li>
+<li><strong>Expo.</strong> Expo is a US company. It says it complies with the EU-US Data Privacy Framework, and its <a href="https://expo.dev/terms">terms</a> provide for the SCCs.</li>
+<li><strong>Stadia Maps.</strong> Stadia Maps is a US company. Its <a href="https://stadiamaps.com/legal/data-processing-addendum/">Data Processing Addendum</a> provides for the SCCs.</li>
+<li><strong>Open Food Facts and Hevy.</strong> Open Food Facts is a French association and Hevy is a Spanish company, so both are inside the EEA, though each may use providers elsewhere.</li>
+</ul>
+<p>To get a copy of a safeguard, or if you cannot find it in the linked terms, email us.</p>
+
+<h2>Your rights</h2>
+<p>Most of your data is on your phone, where you can see, change, export and delete it yourself. For what Stride's server holds, you can ask by email for a copy, a correction or deletion. If you are in the EU, the EEA or the UK, you can also ask us to restrict how your data is used, take your data with you, object to uses based on our legitimate interest, and withdraw your consent at any time. We answer within one month.</p>
+<p>Stride does not make decisions about you that have legal or similarly significant effects by automated means. The coach gives advice that you are free to ignore.</p>
+<p>You can complain to the Norwegian Data Protection Authority, <a href="https://www.datatilsynet.no/en/about-us/contact-us/how-to-complain-to-the-norwegian-dpa/">Datatilsynet</a>, or to the data protection authority where you live or work, or where you think the rules were broken.</p>
+
 <h2>Security</h2>
-<p>All data sent between the app and Stride's server, Google and other services is encrypted in transit (HTTPS).</p>
+<p>Data sent between the app and Stride's server, Anthropic, Google and the other services named here is encrypted in transit (HTTPS). On your phone, Stride's data is in the app's private storage, protected by Android and your screen lock.</p>
+
+<h2>Not medical advice</h2>
+<p>Stride and its coach give general fitness and nutrition information. They are not a medical device and do not diagnose, treat, cure or prevent any condition. AI replies can be wrong or out of date, so check facts that matter to you before you rely on them. For pain, injury, illness, pregnancy, or concerns about eating, talk to a doctor or other qualified professional.</p>
 
 <h2>Changes</h2>
-<p>If this policy changes, the new version will be posted here with a new date.</p>
+<p>If this policy changes, the new version is posted at <a href="https://heeeelyeeee.github.io/stride-site/privacy.html">https://heeeelyeeee.github.io/stride-site/privacy.html</a> and in the app, with a new date at the top. If a change matters, such as a new place your data goes, we will tell you in the app.</p>
+<p>Since 2026-10-10 the coach chat runs on Anthropic's Claude instead of Google's Gemini, and Google still handles the features listed under "AI features that use Google Gemini". With that update Stride shows its agreement screen again, so you can see the change before you go on.</p>
 
 <h2>Contact</h2>
-<p>Email <a href="mailto:ugleskippy123@gmail.com">ugleskippy123@gmail.com</a>.</p>
+<p>Email <a href="mailto:ugleskippy123@gmail.com">ugleskippy123@gmail.com</a>. To report a harmful or offensive coach reply, email us and say what it said.</p>
 <footer>Stride · Contact: <a href="mailto:ugleskippy123@gmail.com">ugleskippy123@gmail.com</a></footer>
 </main>
 </body>
